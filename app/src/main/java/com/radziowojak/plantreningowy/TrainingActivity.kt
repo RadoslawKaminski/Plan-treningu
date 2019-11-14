@@ -13,9 +13,13 @@ class TrainingActivity : AppCompatActivity(){
         val lastTrainingName = sharedprefs.prefs.getString("training_name", "")
         val editor = sharedprefs.prefs.edit()
         if(lastTrainingName == "Trening B")
+        {
             training_name.text = "Trening A"
+        }
         else
+        {
             training_name.text = "Trening B"
+        }
         editor.putString("training_name", training_name.text.toString())
         editor.apply()
 
