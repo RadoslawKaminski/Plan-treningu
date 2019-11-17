@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
         training_btn.setOnClickListener {
             val trainingIntent = Intent(this, TrainingActivity::class.java)
-            // start your next activity
             startActivity(trainingIntent)
         }
 
