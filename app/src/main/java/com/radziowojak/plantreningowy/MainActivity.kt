@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val sharedprefs = SharedPrefs(this)
-        if(/*sharedprefs.prefs.getString("training_name", "") == ""*/ true)
+        if(sharedprefs.prefs.getString("training_name", "") == "")
         {
             //stworzenie poprzedniego treningu
             val editor = sharedprefs.prefs.edit()

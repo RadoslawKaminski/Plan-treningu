@@ -503,11 +503,20 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/trening_b"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/save_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Zapisz i zakończ" />
+
         <!-- koniec trening_a -->
     </LinearLayout>
 </ScrollView>

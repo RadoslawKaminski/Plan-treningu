@@ -21,6 +21,8 @@ class TrainingActivity : AppCompatActivity(){
         if(lastTrainingName == "Trening B")
         {
             training_name.text = "Trening A"
+            trening_a.visibility = View.VISIBLE
+            trening_a.visibility = View.GONE
 
             /* wyciskanie1 */
             wyciskanie11.text = sharedprefs.prefs.getFloat("wyciskanie11", 0F).toString()
@@ -168,14 +170,26 @@ class TrainingActivity : AppCompatActivity(){
             if(sharedprefs.prefs.getBoolean("1niepelne", false)) 1niepelne.visibility = View.GONE
             else 1niepelne.visibility = View.VISIBLE
             */
+            try {
+                editor.putFloat("wyciskanie11", (terazwyciskanie11.text).toString().toFloat())
+                editor.putFloat("wyciskanie12", (terazwyciskanie12.text).toString().toFloat())
+                editor.putFloat("wyciskanie13", (terazwyciskanie13.text).toString().toFloat())
+                editor.putFloat("wyciskanie14", (terazwyciskanie14.text).toString().toFloat())
+                editor.putBoolean("wyciskanie1niepelne", tnwyciskanie1.isChecked)
+                editor.putFloat("wyciskanie21", (terazwyciskanie21.text).toString().toFloat())
+                editor.putFloat("wyciskanie22", (terazwyciskanie22.text).toString().toFloat())
+                editor.putFloat("wyciskanie23", (terazwyciskanie23.text).toString().toFloat())
+                editor.putFloat("wyciskanie24", (terazwyciskanie24.text).toString().toFloat())
+                editor.putBoolean("wyciskanie2niepelne",  tnwyciskanie2.isChecked)
+            } catch (nfe: NumberFormatException){}
         }
         else
         {
             training_name.text = "Trening B"
         }
-        editor.putString("training_name", training_name.text.toString())
 
         save_btn.setOnClickListener {
+            editor.putString("training_name", training_name.text.toString())
             editor.apply()
             finish()
         }
