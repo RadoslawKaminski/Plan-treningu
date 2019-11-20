@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity() {
             editor.putFloat("ohp2ciezar", 5F)
             editor.putBoolean("ohp2niepelne", false)
 
-            editor.putInt("przysiad1razy", 7)
-            editor.putFloat("przysiad1ciezar", 5F)
-            editor.putBoolean("przysiad1niepelne", false)
-            editor.putInt("przysiad2razy", 5)
-            editor.putFloat("przysiad2ciezar", 5F)
-            editor.putBoolean("przysiad2niepelne", false)
+            editor.putInt("przysiady1razy", 7)
+            editor.putFloat("przysiady1ciezar", 5F)
+            editor.putBoolean("przysiady1niepelne", false)
+            editor.putInt("przysiady2razy", 5)
+            editor.putFloat("przysiady2ciezar", 5F)
+            editor.putBoolean("przysiady2niepelne", false)
 
             editor.putInt("bokbarku1razy", 9)
             editor.putFloat("bokbarku1ciezar", 5F)
