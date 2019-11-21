@@ -396,6 +396,425 @@ class TrainingActivity : AppCompatActivity(){
             training_name.text = "Trening B"
             trening_b.visibility = View.VISIBLE
             trening_a.visibility = View.GONE
+            /* martwy1 */
+            martwy11.text = sharedprefs.prefs.getFloat("martwy11", 0F).toString()
+            martwy12.text = sharedprefs.prefs.getFloat("martwy12", 0F).toString()
+            martwy13.text = sharedprefs.prefs.getFloat("martwy13", 0F).toString()
+            martwy14.text = sharedprefs.prefs.getFloat("martwy14", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("martwy1niepelne", false))
+            {
+                martwy1niepelne.visibility = View.VISIBLE
+                terazmartwy11.setText(martwy11.text)
+                terazmartwy12.setText(martwy12.text)
+                terazmartwy13.setText(martwy13.text)
+                terazmartwy14.setText(martwy14.text)
+            }
+            else
+            {
+                martwy1niepelne.visibility = View.GONE
+                terazmartwy11.setText(((martwy11.text as String).toFloat() + 2.5).toString())
+                terazmartwy12.setText(((martwy12.text as String).toFloat() + 2.5).toString())
+                terazmartwy13.setText(((martwy13.text as String).toFloat() + 2.5).toString())
+                terazmartwy14.setText(((martwy14.text as String).toFloat() + 2.5).toString())
+            }
+            rmartwy11.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.5))
+            rmartwy12.text = roundAndConvert(((terazmartwy12.text).toString().toFloat() * 0.75))
+            rmartwy13.text = roundAndConvert(((terazmartwy13.text).toString().toFloat() * 0.9))
+            nastronew11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
+            nastronew12.text = roundAndConvert(((((terazmartwy12.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronew13.text = roundAndConvert(((((terazmartwy13.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronew14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
+            nastronew15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))
+            nastronew16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))
+            nastronew17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))
+            terazmartwy11.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {
+                        rmartwy11.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.5))
+                        rmartwy12.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.75))
+                        rmartwy13.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.9))
+
+                        nastronew11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
+                        nastronew12.text = roundAndConvert(((((terazmartwy12.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronew13.text = roundAndConvert(((((terazmartwy13.text).toString().toFloat() * 0.9) - 20) / 2))
+
+                        nastronew14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
+                    } catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy12.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy13.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy14.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+
+            /* martwy2 */
+            martwy21.text = sharedprefs.prefs.getFloat("martwy21", 0F).toString()
+            martwy22.text = sharedprefs.prefs.getFloat("martwy22", 0F).toString()
+            martwy23.text = sharedprefs.prefs.getFloat("martwy23", 0F).toString()
+            martwy24.text = sharedprefs.prefs.getFloat("martwy24", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("martwy2niepelne", false))
+            {
+                martwy2niepelne.visibility = View.VISIBLE
+                terazmartwy21.setText(martwy21.text)
+                terazmartwy22.setText(martwy22.text)
+                terazmartwy23.setText(martwy23.text)
+                terazmartwy24.setText(martwy24.text)
+            }
+            else
+            {
+                martwy2niepelne.visibility = View.GONE
+                terazmartwy21.setText(((martwy21.text as String).toFloat() + 2.5).toString())
+                terazmartwy22.setText(((martwy22.text as String).toFloat() + 2.5).toString())
+                terazmartwy23.setText(((martwy23.text as String).toFloat() + 2.5).toString())
+                terazmartwy24.setText(((martwy24.text as String).toFloat() + 2.5).toString())
+            }
+            rmartwy21.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.5))
+            rmartwy22.text = roundAndConvert(((terazmartwy22.text).toString().toFloat() * 0.75))
+            rmartwy23.text = roundAndConvert(((terazmartwy23.text).toString().toFloat() * 0.9))
+            nastronew21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
+            nastronew22.text = roundAndConvert(((((terazmartwy22.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronew23.text = roundAndConvert(((((terazmartwy23.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronew24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
+            nastronew25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))
+            nastronew26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))
+            nastronew27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))
+            terazmartwy21.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {
+                        rmartwy21.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.5))
+                        rmartwy22.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.75))
+                        rmartwy23.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.9))
+
+                        nastronew21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
+                        nastronew22.text = roundAndConvert(((((terazmartwy22.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronew23.text = roundAndConvert(((((terazmartwy23.text).toString().toFloat() * 0.9) - 20) / 2))
+
+                        nastronew24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
+                    } catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy22.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy23.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+            terazmartwy24.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {}
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    try {nastronew27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                }
+            })
+
+            /*wioslowanie1*/
+            wioslowanie1razy.text = sharedprefs.prefs.getInt("wioslowanie1razy", 0).toString()
+            wioslowanie1ciezar.text = sharedprefs.prefs.getFloat("wioslowanie1ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("wioslowanie1niepelne", false))
+            {
+                wioslowanie1niepelne.visibility = View.VISIBLE
+                terazwioslowanie1razy.setText(wioslowanie1razy.text)
+                terazwioslowanie1ciezar.setText(wioslowanie1ciezar.text)
+            }
+            else
+            {
+                wioslowanie1niepelne.visibility = View.GONE
+                if((wioslowanie1razy.text).toString().toInt() >= 7)
+                {
+                    terazwioslowanie1razy.setText("5")
+                    terazwioslowanie1ciezar.setText(((wioslowanie1ciezar.text as String).toFloat() + 2.5).toString())
+                }
+                else
+                {
+                    terazwioslowanie1razy.setText(((wioslowanie1razy.text as String).toInt() + 1).toString())
+                    terazwioslowanie1ciezar.setText(wioslowanie1ciezar.text)
+                }
+            }
+
+            /*wioslowanie2*/
+            wioslowanie2razy.text = sharedprefs.prefs.getInt("wioslowanie2razy", 0).toString()
+            wioslowanie2ciezar.text = sharedprefs.prefs.getFloat("wioslowanie2ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("wioslowanie2niepelne", false))
+            {
+                wioslowanie2niepelne.visibility = View.VISIBLE
+                terazwioslowanie2razy.setText(wioslowanie2razy.text)
+                terazwioslowanie2ciezar.setText(wioslowanie2ciezar.text)
+            }
+            else
+            {
+                wioslowanie2niepelne.visibility = View.GONE
+                if((wioslowanie2razy.text).toString().toInt() >= 7)
+                {
+                    terazwioslowanie2razy.setText("5")
+                    terazwioslowanie2ciezar.setText(((wioslowanie2ciezar.text as String).toFloat() + 2.5).toString())
+                }
+                else
+                {
+                    terazwioslowanie2razy.setText(((wioslowanie2razy.text as String).toInt() + 1).toString())
+                    terazwioslowanie2ciezar.setText(wioslowanie2ciezar.text)
+                }
+            }
+
+            /*podciaganie1*/
+            podciaganie1razy.text = sharedprefs.prefs.getInt("podciaganie1razy", 0).toString()
+            podciaganie1ciezar.text = sharedprefs.prefs.getFloat("podciaganie1ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("podciaganie1niepelne", false))
+            {
+                podciaganie1niepelne.visibility = View.VISIBLE
+                terazpodciaganie1razy.setText(podciaganie1razy.text)
+                terazpodciaganie1ciezar.setText(podciaganie1ciezar.text)
+            }
+            else
+            {
+                podciaganie1niepelne.visibility = View.GONE
+                if((podciaganie1razy.text).toString().toInt() >= 12)
+                {
+                    terazpodciaganie1razy.setText("4")
+                    terazpodciaganie1ciezar.setText(((podciaganie1ciezar.text as String).toFloat() + 5).toString())
+                }
+                else
+                {
+                    terazpodciaganie1razy.setText(((podciaganie1razy.text as String).toInt() + 1).toString())
+                    terazpodciaganie1ciezar.setText(podciaganie1ciezar.text)
+                }
+            }
+
+            /*podciaganie2*/
+            podciaganie2razy.text = sharedprefs.prefs.getInt("podciaganie2razy", 0).toString()
+            podciaganie2ciezar.text = sharedprefs.prefs.getFloat("podciaganie2ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("podciaganie2niepelne", false))
+            {
+                podciaganie2niepelne.visibility = View.VISIBLE
+                terazpodciaganie2razy.setText(podciaganie2razy.text)
+                terazpodciaganie2ciezar.setText(podciaganie2ciezar.text)
+            }
+            else
+            {
+                podciaganie2niepelne.visibility = View.GONE
+                if((podciaganie2razy.text).toString().toInt() >= 12)
+                {
+                    terazpodciaganie2razy.setText("4")
+                    terazpodciaganie2ciezar.setText(((podciaganie2ciezar.text as String).toFloat() + 5).toString())
+                }
+                else
+                {
+                    terazpodciaganie2razy.setText(((podciaganie2razy.text as String).toInt() + 1).toString())
+                    terazpodciaganie2ciezar.setText(podciaganie2ciezar.text)
+                }
+            }
+            /*tylbarku1*/
+            tylbarku1razy.text = sharedprefs.prefs.getInt("tylbarku1razy", 0).toString()
+            tylbarku1ciezar.text = sharedprefs.prefs.getFloat("tylbarku1ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("tylbarku1niepelne", false))
+            {
+                tylbarku1niepelne.visibility = View.VISIBLE
+                teraztylbarku1razy.setText(tylbarku1razy.text)
+                teraztylbarku1ciezar.setText(tylbarku1ciezar.text)
+            }
+            else
+            {
+                tylbarku1niepelne.visibility = View.GONE
+                if((tylbarku1razy.text).toString().toInt() >= 12)
+                {
+                    teraztylbarku1razy.setText("8")
+                    teraztylbarku1ciezar.setText(((tylbarku1ciezar.text as String).toFloat() + 2).toString())
+                }
+                else
+                {
+                    teraztylbarku1razy.setText(((tylbarku1razy.text as String).toInt() + 1).toString())
+                    teraztylbarku1ciezar.setText(tylbarku1ciezar.text)
+                }
+            }
+
+            /*tylbarku2*/
+            tylbarku2razy.text = sharedprefs.prefs.getInt("tylbarku2razy", 0).toString()
+            tylbarku2ciezar.text = sharedprefs.prefs.getFloat("tylbarku2ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("tylbarku2niepelne", false))
+            {
+                tylbarku2niepelne.visibility = View.VISIBLE
+                teraztylbarku2razy.setText(tylbarku2razy.text)
+                teraztylbarku2ciezar.setText(tylbarku2ciezar.text)
+            }
+            else
+            {
+                tylbarku2niepelne.visibility = View.GONE
+                if((tylbarku2razy.text).toString().toInt() >= 12)
+                {
+                    teraztylbarku2razy.setText("8")
+                    teraztylbarku2ciezar.setText(((tylbarku2ciezar.text as String).toFloat() + 2).toString())
+                }
+                else
+                {
+                    teraztylbarku2razy.setText(((tylbarku2razy.text as String).toInt() + 1).toString())
+                    teraztylbarku2ciezar.setText(tylbarku2ciezar.text)
+                }
+            }
+            /*biceps1*/
+            biceps1razy.text = sharedprefs.prefs.getInt("biceps1razy", 0).toString()
+            biceps1ciezar.text = sharedprefs.prefs.getFloat("biceps1ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("biceps1niepelne", false))
+            {
+                biceps1niepelne.visibility = View.VISIBLE
+                terazbiceps1razy.setText(biceps1razy.text)
+                terazbiceps1ciezar.setText(biceps1ciezar.text)
+            }
+            else
+            {
+                biceps1niepelne.visibility = View.GONE
+                if((biceps1razy.text).toString().toInt() >= 12)
+                {
+                    terazbiceps1razy.setText("8")
+                    terazbiceps1ciezar.setText(((biceps1ciezar.text as String).toFloat() + 2.5).toString())
+                }
+                else
+                {
+                    terazbiceps1razy.setText(((biceps1razy.text as String).toInt() + 1).toString())
+                    terazbiceps1ciezar.setText(biceps1ciezar.text)
+                }
+            }
+
+            /*biceps2*/
+            biceps2razy.text = sharedprefs.prefs.getInt("biceps2razy", 0).toString()
+            biceps2ciezar.text = sharedprefs.prefs.getFloat("biceps2ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("biceps2niepelne", false))
+            {
+                biceps2niepelne.visibility = View.VISIBLE
+                terazbiceps2razy.setText(biceps2razy.text)
+                terazbiceps2ciezar.setText(biceps2ciezar.text)
+            }
+            else
+            {
+                biceps2niepelne.visibility = View.GONE
+                if((biceps2razy.text).toString().toInt() >= 12)
+                {
+                    terazbiceps2razy.setText("8")
+                    terazbiceps2ciezar.setText(((biceps2ciezar.text as String).toFloat() + 2.5).toString())
+                }
+                else
+                {
+                    terazbiceps2razy.setText(((biceps2razy.text as String).toInt() + 1).toString())
+                    terazbiceps2ciezar.setText(biceps2ciezar.text)
+                }
+            }
+            /*allahy1*/
+            allahy1razy.text = sharedprefs.prefs.getInt("allahy1razy", 0).toString()
+            allahy1ciezar.text = sharedprefs.prefs.getFloat("allahy1ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("allahy1niepelne", false))
+            {
+                allahy1niepelne.visibility = View.VISIBLE
+                terazallahy1razy.setText(allahy1razy.text)
+                terazallahy1ciezar.setText(allahy1ciezar.text)
+            }
+            else
+            {
+                allahy1niepelne.visibility = View.GONE
+                if((allahy1razy.text).toString().toInt() >= 14)
+                {
+                    terazallahy1razy.setText("8")
+                    terazallahy1ciezar.setText(((allahy1ciezar.text as String).toFloat() + 5).toString())
+                }
+                else
+                {
+                    terazallahy1razy.setText(((allahy1razy.text as String).toInt() + 1).toString())
+                    terazallahy1ciezar.setText(allahy1ciezar.text)
+                }
+            }
+
+            /*allahy2*/
+            allahy2razy.text = sharedprefs.prefs.getInt("allahy2razy", 0).toString()
+            allahy2ciezar.text = sharedprefs.prefs.getFloat("allahy2ciezar", 0F).toString()
+            if(sharedprefs.prefs.getBoolean("allahy2niepelne", false))
+            {
+                allahy2niepelne.visibility = View.VISIBLE
+                terazallahy2razy.setText(allahy2razy.text)
+                terazallahy2ciezar.setText(allahy2ciezar.text)
+            }
+            else
+            {
+                allahy2niepelne.visibility = View.GONE
+                if((allahy2razy.text).toString().toInt() >= 14)
+                {
+                    terazallahy2razy.setText("8")
+                    terazallahy2ciezar.setText(((allahy2ciezar.text as String).toFloat() + 5).toString())
+                }
+                else
+                {
+                    terazallahy2razy.setText(((allahy2razy.text as String).toInt() + 1).toString())
+                    terazallahy2ciezar.setText(allahy2ciezar.text)
+                }
+            }
+
+            try {
+                editor.putFloat("martwy11", (terazmartwy11.text).toString().toFloat())
+                editor.putFloat("martwy12", (terazmartwy12.text).toString().toFloat())
+                editor.putFloat("martwy13", (terazmartwy13.text).toString().toFloat())
+                editor.putFloat("martwy14", (terazmartwy14.text).toString().toFloat())
+                editor.putBoolean("martwy1niepelne", tnmartwy1.isChecked)
+                editor.putFloat("martwy21", (terazmartwy21.text).toString().toFloat())
+                editor.putFloat("martwy22", (terazmartwy22.text).toString().toFloat())
+                editor.putFloat("martwy23", (terazmartwy23.text).toString().toFloat())
+                editor.putFloat("martwy24", (terazmartwy24.text).toString().toFloat())
+                editor.putBoolean("martwy2niepelne",  tnmartwy2.isChecked)
+                editor.putInt("wioslowanie1razy", (terazwioslowanie1razy.text).toString().toInt())
+                editor.putFloat("wioslowanie1ciezar", (terazwioslowanie1ciezar.text).toString().toFloat())
+                editor.putBoolean("wioslowanie1niepelne", tnwioslowanie1.isChecked)
+                editor.putInt("wioslowanie2razy", (terazwioslowanie2razy.text).toString().toInt())
+                editor.putFloat("wioslowanie2ciezar", (terazwioslowanie2ciezar.text).toString().toFloat())
+                editor.putBoolean("wioslowanie2niepelne", tnwioslowanie2.isChecked)
+                editor.putInt("podciaganie1razy", (terazpodciaganie1razy.text).toString().toInt())
+                editor.putFloat("podciaganie1ciezar", (terazpodciaganie1ciezar.text).toString().toFloat())
+                editor.putBoolean("podciaganie1niepelne", tnpodciaganie1.isChecked)
+                editor.putInt("podciaganie2razy", (terazpodciaganie2razy.text).toString().toInt())
+                editor.putFloat("podciaganie2ciezar", (terazpodciaganie2ciezar.text).toString().toFloat())
+                editor.putBoolean("podciaganie2niepelne", tnpodciaganie2.isChecked)
+                editor.putInt("tylbarku1razy", (teraztylbarku1razy.text).toString().toInt())
+                editor.putFloat("tylbarku1ciezar", (teraztylbarku1ciezar.text).toString().toFloat())
+                editor.putBoolean("tylbarku1niepelne", tntylbarku1.isChecked)
+                editor.putInt("tylbarku2razy", (teraztylbarku2razy.text).toString().toInt())
+                editor.putFloat("tylbarku2ciezar", (teraztylbarku2ciezar.text).toString().toFloat())
+                editor.putBoolean("tylbarku2niepelne", tntylbarku2.isChecked)
+                editor.putInt("biceps1razy", (terazbiceps1razy.text).toString().toInt())
+                editor.putFloat("biceps1ciezar", (terazbiceps1ciezar.text).toString().toFloat())
+                editor.putBoolean("biceps1niepelne", tnbiceps1.isChecked)
+                editor.putInt("biceps2razy", (terazbiceps2razy.text).toString().toInt())
+                editor.putFloat("biceps2ciezar", (terazbiceps2ciezar.text).toString().toFloat())
+                editor.putBoolean("biceps2niepelne", tnbiceps2.isChecked)
+                editor.putInt("allahy1razy", (terazallahy1razy.text).toString().toInt())
+                editor.putFloat("allahy1ciezar", (terazallahy1ciezar.text).toString().toFloat())
+                editor.putBoolean("allahy1niepelne", tnallahy1.isChecked)
+                editor.putInt("allahy2razy", (terazallahy2razy.text).toString().toInt())
+                editor.putFloat("allahy2ciezar", (terazallahy2ciezar.text).toString().toFloat())
+                editor.putBoolean("allahy2niepelne", tnallahy2.isChecked)
+            } catch (nfe: NumberFormatException){}
         }
 
         save_btn.setOnClickListener {
