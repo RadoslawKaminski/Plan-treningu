@@ -21,8 +21,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(statsIntent)
         }
 
-        val sharedprefs = SharedPrefs(this)
-        if(sharedprefs.prefs.getString("training_name", "") == "")
+        import_export_btn.setOnClickListener {
+            val importExportIntent = Intent(this, ImportExportActivity::class.java)
+            startActivity(importExportIntent)
+        }
+
+        /*val sharedprefs = SharedPrefs(this)
+        if(sharedprefs.prefs.getString("training_name", "") == "" && false)
         {
             //stworzenie poprzedniego treningu
             val editor = sharedprefs.prefs.edit()
@@ -115,6 +120,6 @@ class MainActivity : AppCompatActivity() {
             editor.putBoolean("allahy2niepelne", false)
 
             editor.apply()
-        }
+        }*/
     }
 }

@@ -5,44 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8sp"
-    tools:context=".MainActivity">
+    tools:context=".ImportExportActivity">
 
     <Button
-        android:id="@+id/training_btn"
+        android:id="@+id/import_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        android:text="Trening"
+        android:text="Importuj plik"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/stats_btn"
+        android:id="@+id/export_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        android:text="Statystyki"
+        android:text="Eksportuj statystyki do pliku"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/training_btn" />
-
-    <Button
-        android:id="@+id/import_export_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:text="Importuj / Eksportuj statystyki"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stats_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/import_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

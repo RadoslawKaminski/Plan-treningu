@@ -6,14 +6,15 @@ import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_training.*
+import kotlin.math.round
 
 class TrainingActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_training)
 
-        fun roundAndConvert(number: Float): String {return (Math.round(number/1.25) * 1.25).toString()}
-        fun roundAndConvert(number: Double): String {return (Math.round(number/1.25) * 1.25).toString()}
+        fun roundAndConvert(number: Float): String {return (round(number/1.25) * 1.25).toString()}
+        fun roundAndConvert(number: Double): String {return (round(number/1.25) * 1.25).toString()}
 
         val sharedprefs = SharedPrefs(this)
         val lastTrainingName = sharedprefs.prefs.getString("training_name", "")
@@ -46,11 +47,11 @@ class TrainingActivity : AppCompatActivity(){
                 terazwyciskanie14.setText(((wyciskanie14.text as String).toFloat() + 2.5).toString())
             }
             rwyciskanie11.text = roundAndConvert(((terazwyciskanie11.text).toString().toFloat() * 0.5))
-            rwyciskanie12.text = roundAndConvert(((terazwyciskanie12.text).toString().toFloat() * 0.75))
-            rwyciskanie13.text = roundAndConvert(((terazwyciskanie13.text).toString().toFloat() * 0.9))
+            rwyciskanie12.text = roundAndConvert(((terazwyciskanie11.text).toString().toFloat() * 0.75))
+            rwyciskanie13.text = roundAndConvert(((terazwyciskanie11.text).toString().toFloat() * 0.9))
             nastronew11.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.5) - 20) / 2))
-            nastronew12.text = roundAndConvert(((((terazwyciskanie12.text).toString().toFloat() * 0.75) - 20) / 2))
-            nastronew13.text = roundAndConvert(((((terazwyciskanie13.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronew12.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronew13.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.9) - 20) / 2))
             nastronew14.text = roundAndConvert((((terazwyciskanie11.text).toString().toFloat() - 20) / 2))
             nastronew15.text = roundAndConvert((((terazwyciskanie12.text).toString().toFloat() - 20) / 2))
             nastronew16.text = roundAndConvert((((terazwyciskanie13.text).toString().toFloat() - 20) / 2))
@@ -65,8 +66,8 @@ class TrainingActivity : AppCompatActivity(){
                         rwyciskanie13.text = roundAndConvert(((terazwyciskanie11.text).toString().toFloat() * 0.9))
 
                         nastronew11.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.5) - 20) / 2))
-                        nastronew12.text = roundAndConvert(((((terazwyciskanie12.text).toString().toFloat() * 0.75) - 20) / 2))
-                        nastronew13.text = roundAndConvert(((((terazwyciskanie13.text).toString().toFloat() * 0.9) - 20) / 2))
+                        nastronew12.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronew13.text = roundAndConvert(((((terazwyciskanie11.text).toString().toFloat() * 0.9) - 20) / 2))
 
                         nastronew14.text = roundAndConvert((((terazwyciskanie11.text).toString().toFloat() - 20) / 2))
                     } catch (nfe: NumberFormatException){}
@@ -116,11 +117,11 @@ class TrainingActivity : AppCompatActivity(){
                 terazwyciskanie24.setText(((wyciskanie24.text as String).toFloat() + 2.5).toString())
             }
             rwyciskanie21.text = roundAndConvert(((terazwyciskanie21.text).toString().toFloat() * 0.5))
-            rwyciskanie22.text = roundAndConvert(((terazwyciskanie22.text).toString().toFloat() * 0.75))
-            rwyciskanie23.text = roundAndConvert(((terazwyciskanie23.text).toString().toFloat() * 0.9))
+            rwyciskanie22.text = roundAndConvert(((terazwyciskanie21.text).toString().toFloat() * 0.75))
+            rwyciskanie23.text = roundAndConvert(((terazwyciskanie21.text).toString().toFloat() * 0.9))
             nastronew21.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.5) - 20) / 2))
-            nastronew22.text = roundAndConvert(((((terazwyciskanie22.text).toString().toFloat() * 0.75) - 20) / 2))
-            nastronew23.text = roundAndConvert(((((terazwyciskanie23.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronew22.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronew23.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.9) - 20) / 2))
             nastronew24.text = roundAndConvert((((terazwyciskanie21.text).toString().toFloat() - 20) / 2))
             nastronew25.text = roundAndConvert((((terazwyciskanie22.text).toString().toFloat() - 20) / 2))
             nastronew26.text = roundAndConvert((((terazwyciskanie23.text).toString().toFloat() - 20) / 2))
@@ -135,8 +136,8 @@ class TrainingActivity : AppCompatActivity(){
                         rwyciskanie23.text = roundAndConvert(((terazwyciskanie21.text).toString().toFloat() * 0.9))
 
                         nastronew21.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.5) - 20) / 2))
-                        nastronew22.text = roundAndConvert(((((terazwyciskanie22.text).toString().toFloat() * 0.75) - 20) / 2))
-                        nastronew23.text = roundAndConvert(((((terazwyciskanie23.text).toString().toFloat() * 0.9) - 20) / 2))
+                        nastronew22.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronew23.text = roundAndConvert(((((terazwyciskanie21.text).toString().toFloat() * 0.9) - 20) / 2))
 
                         nastronew24.text = roundAndConvert((((terazwyciskanie21.text).toString().toFloat() - 20) / 2))
                     } catch (nfe: NumberFormatException){}
@@ -353,43 +354,6 @@ class TrainingActivity : AppCompatActivity(){
                     terazdipy2ciezar.setText(dipy2ciezar.text)
                 }
             }
-
-            try {
-                editor.putFloat("wyciskanie11", (terazwyciskanie11.text).toString().toFloat())
-                editor.putFloat("wyciskanie12", (terazwyciskanie12.text).toString().toFloat())
-                editor.putFloat("wyciskanie13", (terazwyciskanie13.text).toString().toFloat())
-                editor.putFloat("wyciskanie14", (terazwyciskanie14.text).toString().toFloat())
-                editor.putBoolean("wyciskanie1niepelne", tnwyciskanie1.isChecked)
-                editor.putFloat("wyciskanie21", (terazwyciskanie21.text).toString().toFloat())
-                editor.putFloat("wyciskanie22", (terazwyciskanie22.text).toString().toFloat())
-                editor.putFloat("wyciskanie23", (terazwyciskanie23.text).toString().toFloat())
-                editor.putFloat("wyciskanie24", (terazwyciskanie24.text).toString().toFloat())
-                editor.putBoolean("wyciskanie2niepelne",  tnwyciskanie2.isChecked)
-                editor.putInt("ohp1razy", (terazohp1razy.text).toString().toInt())
-                editor.putFloat("ohp1ciezar", (terazohp1ciezar.text).toString().toFloat())
-                editor.putBoolean("ohp1niepelne", tnohp1.isChecked)
-                editor.putInt("ohp2razy", (terazohp2razy.text).toString().toInt())
-                editor.putFloat("ohp2ciezar", (terazohp2ciezar.text).toString().toFloat())
-                editor.putBoolean("ohp2niepelne", tnohp2.isChecked)
-                editor.putInt("przysiady1razy", (terazprzysiady1razy.text).toString().toInt())
-                editor.putFloat("przysiady1ciezar", (terazprzysiady1ciezar.text).toString().toFloat())
-                editor.putBoolean("przysiady1niepelne", tnprzysiady1.isChecked)
-                editor.putInt("przysiady2razy", (terazprzysiady2razy.text).toString().toInt())
-                editor.putFloat("przysiady2ciezar", (terazprzysiady2ciezar.text).toString().toFloat())
-                editor.putBoolean("przysiady2niepelne", tnprzysiady2.isChecked)
-                editor.putInt("bokbarku1razy", (terazbokbarku1razy.text).toString().toInt())
-                editor.putFloat("bokbarku1ciezar", (terazbokbarku1ciezar.text).toString().toFloat())
-                editor.putBoolean("bokbarku1niepelne", tnbokbarku1.isChecked)
-                editor.putInt("bokbarku2razy", (terazbokbarku2razy.text).toString().toInt())
-                editor.putFloat("bokbarku2ciezar", (terazbokbarku2ciezar.text).toString().toFloat())
-                editor.putBoolean("bokbarku2niepelne", tnbokbarku2.isChecked)
-                editor.putInt("dipy1razy", (terazdipy1razy.text).toString().toInt())
-                editor.putFloat("dipy1ciezar", (terazdipy1ciezar.text).toString().toFloat())
-                editor.putBoolean("dipy1niepelne", tndipy1.isChecked)
-                editor.putInt("dipy2razy", (terazdipy2razy.text).toString().toInt())
-                editor.putFloat("dipy2ciezar", (terazdipy2ciezar.text).toString().toFloat())
-                editor.putBoolean("dipy2niepelne", tndipy2.isChecked)
-            } catch (nfe: NumberFormatException){}
         }
         else
         {
@@ -418,15 +382,15 @@ class TrainingActivity : AppCompatActivity(){
                 terazmartwy14.setText(((martwy14.text as String).toFloat() + 2.5).toString())
             }
             rmartwy11.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.5))
-            rmartwy12.text = roundAndConvert(((terazmartwy12.text).toString().toFloat() * 0.75))
-            rmartwy13.text = roundAndConvert(((terazmartwy13.text).toString().toFloat() * 0.9))
-            nastronew11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
-            nastronew12.text = roundAndConvert(((((terazmartwy12.text).toString().toFloat() * 0.75) - 20) / 2))
-            nastronew13.text = roundAndConvert(((((terazmartwy13.text).toString().toFloat() * 0.9) - 20) / 2))
-            nastronew14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
-            nastronew15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))
-            nastronew16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))
-            nastronew17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))
+            rmartwy12.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.75))
+            rmartwy13.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.9))
+            nastronem11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
+            nastronem12.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronem13.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronem14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
+            nastronem15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))
+            nastronem16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))
+            nastronem17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))
             terazmartwy11.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -436,11 +400,11 @@ class TrainingActivity : AppCompatActivity(){
                         rmartwy12.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.75))
                         rmartwy13.text = roundAndConvert(((terazmartwy11.text).toString().toFloat() * 0.9))
 
-                        nastronew11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
-                        nastronew12.text = roundAndConvert(((((terazmartwy12.text).toString().toFloat() * 0.75) - 20) / 2))
-                        nastronew13.text = roundAndConvert(((((terazmartwy13.text).toString().toFloat() * 0.9) - 20) / 2))
+                        nastronem11.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.5) - 20) / 2))
+                        nastronem12.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronem13.text = roundAndConvert(((((terazmartwy11.text).toString().toFloat() * 0.9) - 20) / 2))
 
-                        nastronew14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
+                        nastronem14.text = roundAndConvert((((terazmartwy11.text).toString().toFloat() - 20) / 2))
                     } catch (nfe: NumberFormatException){}
                 }
             })
@@ -448,21 +412,21 @@ class TrainingActivity : AppCompatActivity(){
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem15.text = roundAndConvert((((terazmartwy12.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
             terazmartwy13.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem16.text = roundAndConvert((((terazmartwy13.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
             terazmartwy14.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem17.text = roundAndConvert((((terazmartwy14.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
 
@@ -488,15 +452,15 @@ class TrainingActivity : AppCompatActivity(){
                 terazmartwy24.setText(((martwy24.text as String).toFloat() + 2.5).toString())
             }
             rmartwy21.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.5))
-            rmartwy22.text = roundAndConvert(((terazmartwy22.text).toString().toFloat() * 0.75))
-            rmartwy23.text = roundAndConvert(((terazmartwy23.text).toString().toFloat() * 0.9))
-            nastronew21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
-            nastronew22.text = roundAndConvert(((((terazmartwy22.text).toString().toFloat() * 0.75) - 20) / 2))
-            nastronew23.text = roundAndConvert(((((terazmartwy23.text).toString().toFloat() * 0.9) - 20) / 2))
-            nastronew24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
-            nastronew25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))
-            nastronew26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))
-            nastronew27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))
+            rmartwy22.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.75))
+            rmartwy23.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.9))
+            nastronem21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
+            nastronem22.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.75) - 20) / 2))
+            nastronem23.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.9) - 20) / 2))
+            nastronem24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
+            nastronem25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))
+            nastronem26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))
+            nastronem27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))
             terazmartwy21.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -506,11 +470,11 @@ class TrainingActivity : AppCompatActivity(){
                         rmartwy22.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.75))
                         rmartwy23.text = roundAndConvert(((terazmartwy21.text).toString().toFloat() * 0.9))
 
-                        nastronew21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
-                        nastronew22.text = roundAndConvert(((((terazmartwy22.text).toString().toFloat() * 0.75) - 20) / 2))
-                        nastronew23.text = roundAndConvert(((((terazmartwy23.text).toString().toFloat() * 0.9) - 20) / 2))
+                        nastronem21.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.5) - 20) / 2))
+                        nastronem22.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.75) - 20) / 2))
+                        nastronem23.text = roundAndConvert(((((terazmartwy21.text).toString().toFloat() * 0.9) - 20) / 2))
 
-                        nastronew24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
+                        nastronem24.text = roundAndConvert((((terazmartwy21.text).toString().toFloat() - 20) / 2))
                     } catch (nfe: NumberFormatException){}
                 }
             })
@@ -518,21 +482,21 @@ class TrainingActivity : AppCompatActivity(){
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem25.text = roundAndConvert((((terazmartwy22.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
             terazmartwy23.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem26.text = roundAndConvert((((terazmartwy23.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
             terazmartwy24.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    try {nastronew27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
+                    try {nastronem27.text = roundAndConvert((((terazmartwy24.text).toString().toFloat() - 20) / 2))} catch (nfe: NumberFormatException){}
                 }
             })
 
@@ -773,52 +737,95 @@ class TrainingActivity : AppCompatActivity(){
                 }
             }
 
-            try {
-                editor.putFloat("martwy11", (terazmartwy11.text).toString().toFloat())
-                editor.putFloat("martwy12", (terazmartwy12.text).toString().toFloat())
-                editor.putFloat("martwy13", (terazmartwy13.text).toString().toFloat())
-                editor.putFloat("martwy14", (terazmartwy14.text).toString().toFloat())
-                editor.putBoolean("martwy1niepelne", tnmartwy1.isChecked)
-                editor.putFloat("martwy21", (terazmartwy21.text).toString().toFloat())
-                editor.putFloat("martwy22", (terazmartwy22.text).toString().toFloat())
-                editor.putFloat("martwy23", (terazmartwy23.text).toString().toFloat())
-                editor.putFloat("martwy24", (terazmartwy24.text).toString().toFloat())
-                editor.putBoolean("martwy2niepelne",  tnmartwy2.isChecked)
-                editor.putInt("wioslowanie1razy", (terazwioslowanie1razy.text).toString().toInt())
-                editor.putFloat("wioslowanie1ciezar", (terazwioslowanie1ciezar.text).toString().toFloat())
-                editor.putBoolean("wioslowanie1niepelne", tnwioslowanie1.isChecked)
-                editor.putInt("wioslowanie2razy", (terazwioslowanie2razy.text).toString().toInt())
-                editor.putFloat("wioslowanie2ciezar", (terazwioslowanie2ciezar.text).toString().toFloat())
-                editor.putBoolean("wioslowanie2niepelne", tnwioslowanie2.isChecked)
-                editor.putInt("podciaganie1razy", (terazpodciaganie1razy.text).toString().toInt())
-                editor.putFloat("podciaganie1ciezar", (terazpodciaganie1ciezar.text).toString().toFloat())
-                editor.putBoolean("podciaganie1niepelne", tnpodciaganie1.isChecked)
-                editor.putInt("podciaganie2razy", (terazpodciaganie2razy.text).toString().toInt())
-                editor.putFloat("podciaganie2ciezar", (terazpodciaganie2ciezar.text).toString().toFloat())
-                editor.putBoolean("podciaganie2niepelne", tnpodciaganie2.isChecked)
-                editor.putInt("tylbarku1razy", (teraztylbarku1razy.text).toString().toInt())
-                editor.putFloat("tylbarku1ciezar", (teraztylbarku1ciezar.text).toString().toFloat())
-                editor.putBoolean("tylbarku1niepelne", tntylbarku1.isChecked)
-                editor.putInt("tylbarku2razy", (teraztylbarku2razy.text).toString().toInt())
-                editor.putFloat("tylbarku2ciezar", (teraztylbarku2ciezar.text).toString().toFloat())
-                editor.putBoolean("tylbarku2niepelne", tntylbarku2.isChecked)
-                editor.putInt("biceps1razy", (terazbiceps1razy.text).toString().toInt())
-                editor.putFloat("biceps1ciezar", (terazbiceps1ciezar.text).toString().toFloat())
-                editor.putBoolean("biceps1niepelne", tnbiceps1.isChecked)
-                editor.putInt("biceps2razy", (terazbiceps2razy.text).toString().toInt())
-                editor.putFloat("biceps2ciezar", (terazbiceps2ciezar.text).toString().toFloat())
-                editor.putBoolean("biceps2niepelne", tnbiceps2.isChecked)
-                editor.putInt("allahy1razy", (terazallahy1razy.text).toString().toInt())
-                editor.putFloat("allahy1ciezar", (terazallahy1ciezar.text).toString().toFloat())
-                editor.putBoolean("allahy1niepelne", tnallahy1.isChecked)
-                editor.putInt("allahy2razy", (terazallahy2razy.text).toString().toInt())
-                editor.putFloat("allahy2ciezar", (terazallahy2ciezar.text).toString().toFloat())
-                editor.putBoolean("allahy2niepelne", tnallahy2.isChecked)
-            } catch (nfe: NumberFormatException){}
         }
 
         save_btn.setOnClickListener {
             editor.putString("training_name", training_name.text.toString())
+
+            if(lastTrainingName == "Trening B")
+            {
+                try {
+                    editor.putFloat("wyciskanie11", (terazwyciskanie11.text).toString().toFloat())
+                    editor.putFloat("wyciskanie12", (terazwyciskanie12.text).toString().toFloat())
+                    editor.putFloat("wyciskanie13", (terazwyciskanie13.text).toString().toFloat())
+                    editor.putFloat("wyciskanie14", (terazwyciskanie14.text).toString().toFloat())
+                    editor.putBoolean("wyciskanie1niepelne", tnwyciskanie1.isChecked)
+                    editor.putFloat("wyciskanie21", (terazwyciskanie21.text).toString().toFloat())
+                    editor.putFloat("wyciskanie22", (terazwyciskanie22.text).toString().toFloat())
+                    editor.putFloat("wyciskanie23", (terazwyciskanie23.text).toString().toFloat())
+                    editor.putFloat("wyciskanie24", (terazwyciskanie24.text).toString().toFloat())
+                    editor.putBoolean("wyciskanie2niepelne",  tnwyciskanie2.isChecked)
+                    editor.putInt("ohp1razy", (terazohp1razy.text).toString().toInt())
+                    editor.putFloat("ohp1ciezar", (terazohp1ciezar.text).toString().toFloat())
+                    editor.putBoolean("ohp1niepelne", tnohp1.isChecked)
+                    editor.putInt("ohp2razy", (terazohp2razy.text).toString().toInt())
+                    editor.putFloat("ohp2ciezar", (terazohp2ciezar.text).toString().toFloat())
+                    editor.putBoolean("ohp2niepelne", tnohp2.isChecked)
+                    editor.putInt("przysiady1razy", (terazprzysiady1razy.text).toString().toInt())
+                    editor.putFloat("przysiady1ciezar", (terazprzysiady1ciezar.text).toString().toFloat())
+                    editor.putBoolean("przysiady1niepelne", tnprzysiady1.isChecked)
+                    editor.putInt("przysiady2razy", (terazprzysiady2razy.text).toString().toInt())
+                    editor.putFloat("przysiady2ciezar", (terazprzysiady2ciezar.text).toString().toFloat())
+                    editor.putBoolean("przysiady2niepelne", tnprzysiady2.isChecked)
+                    editor.putInt("bokbarku1razy", (terazbokbarku1razy.text).toString().toInt())
+                    editor.putFloat("bokbarku1ciezar", (terazbokbarku1ciezar.text).toString().toFloat())
+                    editor.putBoolean("bokbarku1niepelne", tnbokbarku1.isChecked)
+                    editor.putInt("bokbarku2razy", (terazbokbarku2razy.text).toString().toInt())
+                    editor.putFloat("bokbarku2ciezar", (terazbokbarku2ciezar.text).toString().toFloat())
+                    editor.putBoolean("bokbarku2niepelne", tnbokbarku2.isChecked)
+                    editor.putInt("dipy1razy", (terazdipy1razy.text).toString().toInt())
+                    editor.putFloat("dipy1ciezar", (terazdipy1ciezar.text).toString().toFloat())
+                    editor.putBoolean("dipy1niepelne", tndipy1.isChecked)
+                    editor.putInt("dipy2razy", (terazdipy2razy.text).toString().toInt())
+                    editor.putFloat("dipy2ciezar", (terazdipy2ciezar.text).toString().toFloat())
+                    editor.putBoolean("dipy2niepelne", tndipy2.isChecked)
+                } catch (nfe: NumberFormatException){}
+            }
+            else
+            {
+                try {
+                    editor.putFloat("martwy11", (terazmartwy11.text).toString().toFloat())
+                    editor.putFloat("martwy12", (terazmartwy12.text).toString().toFloat())
+                    editor.putFloat("martwy13", (terazmartwy13.text).toString().toFloat())
+                    editor.putFloat("martwy14", (terazmartwy14.text).toString().toFloat())
+                    editor.putBoolean("martwy1niepelne", tnmartwy1.isChecked)
+                    editor.putFloat("martwy21", (terazmartwy21.text).toString().toFloat())
+                    editor.putFloat("martwy22", (terazmartwy22.text).toString().toFloat())
+                    editor.putFloat("martwy23", (terazmartwy23.text).toString().toFloat())
+                    editor.putFloat("martwy24", (terazmartwy24.text).toString().toFloat())
+                    editor.putBoolean("martwy2niepelne",  tnmartwy2.isChecked)
+                    editor.putInt("wioslowanie1razy", (terazwioslowanie1razy.text).toString().toInt())
+                    editor.putFloat("wioslowanie1ciezar", (terazwioslowanie1ciezar.text).toString().toFloat())
+                    editor.putBoolean("wioslowanie1niepelne", tnwioslowanie1.isChecked)
+                    editor.putInt("wioslowanie2razy", (terazwioslowanie2razy.text).toString().toInt())
+                    editor.putFloat("wioslowanie2ciezar", (terazwioslowanie2ciezar.text).toString().toFloat())
+                    editor.putBoolean("wioslowanie2niepelne", tnwioslowanie2.isChecked)
+                    editor.putInt("podciaganie1razy", (terazpodciaganie1razy.text).toString().toInt())
+                    editor.putFloat("podciaganie1ciezar", (terazpodciaganie1ciezar.text).toString().toFloat())
+                    editor.putBoolean("podciaganie1niepelne", tnpodciaganie1.isChecked)
+                    editor.putInt("podciaganie2razy", (terazpodciaganie2razy.text).toString().toInt())
+                    editor.putFloat("podciaganie2ciezar", (terazpodciaganie2ciezar.text).toString().toFloat())
+                    editor.putBoolean("podciaganie2niepelne", tnpodciaganie2.isChecked)
+                    editor.putInt("tylbarku1razy", (teraztylbarku1razy.text).toString().toInt())
+                    editor.putFloat("tylbarku1ciezar", (teraztylbarku1ciezar.text).toString().toFloat())
+                    editor.putBoolean("tylbarku1niepelne", tntylbarku1.isChecked)
+                    editor.putInt("tylbarku2razy", (teraztylbarku2razy.text).toString().toInt())
+                    editor.putFloat("tylbarku2ciezar", (teraztylbarku2ciezar.text).toString().toFloat())
+                    editor.putBoolean("tylbarku2niepelne", tntylbarku2.isChecked)
+                    editor.putInt("biceps1razy", (terazbiceps1razy.text).toString().toInt())
+                    editor.putFloat("biceps1ciezar", (terazbiceps1ciezar.text).toString().toFloat())
+                    editor.putBoolean("biceps1niepelne", tnbiceps1.isChecked)
+                    editor.putInt("biceps2razy", (terazbiceps2razy.text).toString().toInt())
+                    editor.putFloat("biceps2ciezar", (terazbiceps2ciezar.text).toString().toFloat())
+                    editor.putBoolean("biceps2niepelne", tnbiceps2.isChecked)
+                    editor.putInt("allahy1razy", (terazallahy1razy.text).toString().toInt())
+                    editor.putFloat("allahy1ciezar", (terazallahy1ciezar.text).toString().toFloat())
+                    editor.putBoolean("allahy1niepelne", tnallahy1.isChecked)
+                    editor.putInt("allahy2razy", (terazallahy2razy.text).toString().toInt())
+                    editor.putFloat("allahy2ciezar", (terazallahy2ciezar.text).toString().toFloat())
+                    editor.putBoolean("allahy2niepelne", tnallahy2.isChecked)
+                } catch (nfe: NumberFormatException){}
+            }
             editor.apply()
             finish()
         }
