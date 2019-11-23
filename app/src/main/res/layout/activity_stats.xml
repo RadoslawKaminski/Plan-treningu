@@ -1457,7 +1457,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="3 serie po 8-12 powtórzeń" />
+                    android:text="3 serie po 8-14 powtórzeń" />
 
                 <TextView
                     android:layout_width="match_parent"
